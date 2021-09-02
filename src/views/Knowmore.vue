@@ -8,8 +8,8 @@
               <div class="card mx-auto">
                 <div class="imgBx">
                   <img
-                    src="../assets/Home.svg"
-                    alt="Founder's Image"
+                    src="../assets/Home.png"
+                    alt="Home Image"
                     class="homeimg"
                   />
                 </div>
@@ -60,5 +60,23 @@ img {
   font-size: 16px;
   line-height: 40px;
   height: 100%;
+}
+
+@media (max-width: 1000px) and (min-width: 700px) {
+  .aboutteext p {
+    line-height: 20px;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 990px) {
+  .aboutteext p {
+    padding: 20px 0;
+  }
+}
+
+@media screen and (min-width: 1210px) {
+  .aboutteext p {
+    padding: 70px 0;
+  }
 }
 </style>
