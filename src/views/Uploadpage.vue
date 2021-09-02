@@ -32,9 +32,11 @@
     <vs-popup class="holamundo" title="Result" :active.sync="popupActivo">
       <div v-if="popups == 'yes'">
         <img src="../assets/Yes.gif" alt="The end is near" />
+        <p>Yes its a tumor 😥</p>
       </div>
       <div v-if="popups == 'no'">
         <img src="../assets/No.gif" alt="The end is near" />
+        <p>Hurrah its not a tumor 🤗</p>
       </div>
     </vs-popup>
   </div>
