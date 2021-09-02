@@ -18,8 +18,8 @@
             <div class="col-12 col-lg-6 col-xl-6 col-sm-12 col-md-6">
               <div class="aboutteext">
                 <p class="column">
-                  Magnetic resonance imaging (MRI) and computed tomography (CT)
-                  scans are used most often to look for brain diseases. <br />
+                  Computed tomography (CT) scans are used most often to look for
+                  brain diseases. <br />
                   These scans will almost always show a brain tumor, if one is
                   present.
                   <vs-divider border-style="solid" color="dark"

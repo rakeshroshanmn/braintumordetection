@@ -29,6 +29,14 @@
         </div>
       </div>
     </div>
+    <vs-popup class="holamundo" title="Result" :active.sync="popupActivo">
+      <div v-if="popups == 'yes'">
+        <img src="../assets/Yes.gif" alt="The end is near" />
+      </div>
+      <div v-if="popups == 'no'">
+        <img src="../assets/No.gif" alt="The end is near" />
+      </div>
+    </vs-popup>
   </div>
 </template>
 
@@ -36,6 +44,12 @@
 import S3 from "aws-s3";
 import axios from "axios";
 export default {
+  data() {
+    return {
+      popupActivo: false,
+      popups: String,
+    };
+  },
   methods: {
     onupload(e) {
       console.log(e);
@@ -43,15 +57,26 @@ export default {
       this.S3Client.uploadFile(file).then((data) => {
         console.log("IMAGE UPLOADED");
         axios
-          .post("http://localhost:3000/", data)
-          .then((response) => console.log(response));
+          .post(
+            "http://braintumordetection-env.eba-wmsrw2dw.ap-south-1.elasticbeanstalk.com/",
+            data
+          )
+          .then((response) => {
+            console.log(response);
+            this.popupActivo = true;
+            if (response.data.CustomLabels[0].Name == "yes") {
+              this.popups = "yes";
+            } else if (response.data.CustomLabels[0].Name == "no") {
+              this.popups = "no";
+            }
+          });
       });
     },
   },
   computed: {
     config() {
       return {
-        bucketName: "braintumordetection",
+        bucketName: "braintumornewclient",
         region: "ap-south-1",
         accessKeyId: "AKIAX4MFRFGGNCBMO5FC",
         secretAccessKey: "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",
