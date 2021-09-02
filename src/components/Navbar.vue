@@ -6,9 +6,6 @@
           <a href="/" style="text-decoration: none">Brain Tumor Detection</a>
         </vs-navbar-title>
       </div>
-      <vs-navbar-item index="0">
-        <a href="/Uploadpage">Upload</a>
-      </vs-navbar-item>
     </vs-navbar>
   </div>
 </template>

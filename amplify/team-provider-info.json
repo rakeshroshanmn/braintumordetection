@@ -1,0 +1,23 @@
+{
+    "dev": {
+        "awscloudformation": {
+            "AuthRoleName": "amplify-braintumordetection-dev-174228-authRole",
+            "UnauthRoleArn": "arn:aws:iam::541982796172:role/amplify-braintumordetection-dev-174228-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::541982796172:role/amplify-braintumordetection-dev-174228-authRole",
+            "Region": "ap-south-1",
+            "DeploymentBucketName": "amplify-braintumordetection-dev-174228-deployment",
+            "UnauthRoleName": "amplify-braintumordetection-dev-174228-unauthRole",
+            "StackName": "amplify-braintumordetection-dev-174228",
+            "StackId": "arn:aws:cloudformation:ap-south-1:541982796172:stack/amplify-braintumordetection-dev-174228/0cc4ae90-0be7-11ec-a7d6-06d7c04637b8",
+            "AmplifyAppId": "dw3vjtx524rsu"
+        },
+        "categories": {
+            "hosting": {
+                "amplifyhosting": {
+                    "appId": "dw3vjtx524rsu",
+                    "type": "manual"
+                }
+            }
+        }
+    }
+}
