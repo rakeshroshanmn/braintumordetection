@@ -56,8 +56,7 @@
 </template>
 
 <script>
-import S3 from "aws-s3";
-import axios from "axios";
+// import axios from "axios";
 export default {
   data() {
     return {
@@ -68,39 +67,27 @@ export default {
   methods: {
     onupload(e) {
       console.log(e);
-      let file = e.target.files[0];
-      this.S3Client.uploadFile(file).then((data) => {
-        console.log("IMAGE UPLOADED");
-        axios
-          .post(
-            "http://braintumordetection-env.eba-wmsrw2dw.ap-south-1.elasticbeanstalk.com/",
-            data
-          )
-          .then((response) => {
-            console.log(response);
-            this.popupActivo = true;
-            if (response.data.CustomLabels[0].Name == "yes") {
-              this.popups = "yes";
-            } else if (response.data.CustomLabels[0].Name == "no") {
-              this.popups = "no";
-            }
-          });
-      });
+      // let file = e.target.files[0];
+      // this.S3Client.uploadFile(file).then((data) => {
+      //   console.log("IMAGE UPLOADED");
+      //   axios
+      //     .post(
+      //       "http://braintumordetection-env.eba-wmsrw2dw.ap-south-1.elasticbeanstalk.com/",
+      //       data
+      //     )
+      //     .then((response) => {
+      //       console.log(response);
+      //       this.popupActivo = true;
+      //       if (response.data.CustomLabels[0].Name == "yes") {
+      //         this.popups = "yes";
+      //       } else if (response.data.CustomLabels[0].Name == "no") {
+      //         this.popups = "no";
+      //       }
+      //     });
+      // });
     },
   },
-  computed: {
-    config() {
-      return {
-        bucketName: "braintumornewclient",
-        region: "ap-south-1",
-        accessKeyId: "AKIAX4MFRFGGNCBMO5FC",
-        secretAccessKey: "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",
-      };
-    },
-    S3Client() {
-      return new S3(this.config);
-    },
-  },
+  computed: {},
 };
 </script>
 
