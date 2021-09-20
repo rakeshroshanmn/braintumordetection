@@ -3,7 +3,7 @@
     <div class="container">
       <div class="founderbg">
         <div class="container-fluid">
-          <div class="founder row">
+          <div class="founder row mb-5">
             <div class="col-12 col-lg-6 col-xl-6 col-sm-12 col-md-6">
               <div class="card mx-auto">
                 <div class="imgBx">
@@ -25,8 +25,8 @@
                   <vs-divider border-style="solid" color="dark"
                     >How this works</vs-divider
                   >
-                  We use aws rekognition service to check whether the ct scanned
-                  image contains a tumor or not.
+                  We use aws rekognition custom labels to check whether the ct
+                  scanned image contains a tumor or not.
                 </p>
                 <div class="column">
                   <input
@@ -39,16 +39,30 @@
               </div>
             </div>
           </div>
+          <div class="row">
+            <div class="col mt-5">
+              <video width="800"  controls>
+                <source
+                  src="../assets/video_2021-09-20_21-58-04.mp4"
+                  type="video/mp4"
+                />
+              </video>
+            </div>
+          </div>
         </div>
       </div>
       <vs-popup class="holamundo" title="Result" :active.sync="popupActivo">
-        <div v-if="popups == 'yes'">
-          <img src="../assets/Yes.gif" alt="The end is near" />
-          <p>Yes its a tumor 😥</p>
-        </div>
-        <div v-if="popups == 'no'">
-          <img src="../assets/No.gif" alt="The end is far" />
-          <p>Hurrah its not a tumor 🤗</p>
+        <div>
+          <h3>The service is currently not available</h3>
+          <img
+            src="../assets/server_down.svg"
+            alt="Server Down"
+            class="server_down"
+            width="450px"
+            height="450px"
+            srcset=""
+          />
+          <h5>Scroll down for working model</h5>
         </div>
       </vs-popup>
     </div>
@@ -61,12 +75,12 @@ export default {
   data() {
     return {
       popupActivo: false,
-      popups: String,
     };
   },
   methods: {
+    //eslint-disable-next-line
     onupload(e) {
-      console.log(e);
+      // console.log(e);
       // let file = e.target.files[0];
       // this.S3Client.uploadFile(file).then((data) => {
       //   console.log("IMAGE UPLOADED");
@@ -77,7 +91,7 @@ export default {
       //     )
       //     .then((response) => {
       //       console.log(response);
-      //       this.popupActivo = true;
+      this.popupActivo = true;
       //       if (response.data.CustomLabels[0].Name == "yes") {
       //         this.popups = "yes";
       //       } else if (response.data.CustomLabels[0].Name == "no") {
