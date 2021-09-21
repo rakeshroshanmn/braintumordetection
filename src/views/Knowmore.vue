@@ -41,7 +41,7 @@
           </div>
           <div class="row">
             <div class="col mt-5">
-              <video width="800"  controls>
+              <video width="800" controls autoplay>
                 <source
                   src="../assets/video_2021-09-20_21-58-04.mp4"
                   type="video/mp4"
@@ -62,7 +62,7 @@
             height="450px"
             srcset=""
           />
-          <h5>Scroll down for working model</h5>
+          <h5>Close and Scroll down for working model</h5>
         </div>
       </vs-popup>
     </div>
@@ -115,6 +115,13 @@ img {
   max-width: 800px;
   margin-bottom: 40px;
 }
+
+video {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
 .founderbg {
   padding-bottom: 5px !important;
   padding-top: 5px;
